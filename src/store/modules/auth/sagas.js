@@ -52,12 +52,9 @@ export function* signUp({ payload }) {
 }
 
 export function setToken({ payload }) {
-  console.tron.log('setToken');
-
   if (!payload) return;
   const { auth } = payload;
 
-  console.tron.log('token', auth.token);
   if (auth.token) {
     api.defaults.headers.Authorization = `Bearer ${auth.token}`;
   }
